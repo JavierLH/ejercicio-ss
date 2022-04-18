@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ targetNamespace="https://t4is.uv.mx/agenda"
+ xmlns:tns="https://t4is.uv.mx/agenda"
+ elementFormDefault="qualified">
+ <xs:element name="AgendarRequest">
+  <xs:complexType>
+   <xs:sequence>
+   
+	<xs:element name="fecha" type="xs:string"/>
+    <xs:element name="nombreActividad" type="xs:string"/>
+    <xs:element name="Descripcion" type="xs:string"/>
+    <xs:element name="Lugar" type="xs:string"/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+ <xs:element name="AgendarResponse">
+  <xs:complexType>
+   <xs:sequence>
+	<xs:element name="EventoNuevo" type="xs:string"/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+<xs:element name="BuscarAgendaRequest"/>
+ <xs:element name="BuscarAgendaResponse">
+  <xs:complexType>
+   <xs:sequence>
+	<xs:element name="agendar" maxOccurs="unbounded">
+           <xs:complexType>
+             <xs:sequence>
+                <xs:element name="id" type="xs:int"></xs:element>
+               <xs:element name="fecha" type="xs:string"></xs:element>
+               <xs:element name="nombreActividad" type="xs:string"></xs:element>
+               <xs:element name="Descripcion" type="xs:string"></xs:element>
+               <xs:element name="Lugar" type="xs:string"></xs:element>
+
+             </xs:sequence>
+           </xs:complexType>
+       </xs:element>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+ <xs:element name="ModificarAgendaRequest">
+      <xs:complexType>
+         <xs:sequence>
+            
+            <xs:element name="fecha" type="xs:string"/>
+            <xs:element name="nombreActividad" type="xs:string"/>
+            <xs:element name="Descripcion" type="xs:string"/>
+            <xs:element name="Lugar" type="xs:string"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ModificarAgendaResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="agendaModificada" type="xs:boolean"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="BorrarAgendaRequest">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+
+   <xs:element name="BorrarAgendaResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="respuesta" type="xs:boolean"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+
+</xs:schema> 
